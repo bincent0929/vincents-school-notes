@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Ubuntu Server network service swap from systemd-networkd to NetworkManager for easier WiFi.md",
+                "file": "Ubuntu Server Network Service Swap From systemd-networkd To NetworkManager For Easier WiFi.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ubuntu Server network service swap from systemd-networkd to NetworkManager for easier WiFi"
+              "title": "Ubuntu Server Network Service Swap From systemd-networkd To NetworkManager For Easier WiFi"
             }
           },
           {
@@ -27,15 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "How To Fix The Open vSwitch Problem.md",
+                "file": "How To Fix The Open vSwitch Problem On Ubuntu 22.04.5 LTS On The Raspberry Pi 4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "How To Fix The Open vSwitch Problem"
+              "title": "How To Fix The Open vSwitch Problem On Ubuntu 22.04.5 LTS On The Raspberry Pi 4"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -181,8 +182,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -196,10 +196,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b3ae75c8bbd7a7aa",
+  "active": "f749d095d171ef1a",
   "lastOpenFiles": [
-    "How To Fix The Open vSwitch Problem.md",
-    "Ubuntu Server network service swap from systemd-networkd to NetworkManager for easier WiFi.md",
+    "Ubuntu Server Network Service Swap From systemd-networkd To NetworkManager For Easier WiFi.md",
+    "How To Fix The Open vSwitch Problem On Ubuntu 22.04.5 LTS On The Raspberry Pi 4.md",
     "Welcome.md"
   ]
 }
