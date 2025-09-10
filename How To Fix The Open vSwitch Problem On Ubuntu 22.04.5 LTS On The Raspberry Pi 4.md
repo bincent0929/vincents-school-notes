@@ -10,7 +10,7 @@ Then
 sudo apt-get install openvswitch-switch-dpdk
 ```
 
-Now it won't complain to you.
+Restart your device and now it won't complain to you!
 ## P.S.
 If you are still having problem, it may be related to indentation in `/etc/netplan/50-cloud-init.yaml`. It's very picky.
 
