@@ -195,8 +195,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b3ae75c8bbd7a7aa",
+  "active": "afafe34af46d0a34",
   "lastOpenFiles": [
+    "README.md",
+    "LICENSE",
     "How To Fix The Open vSwitch Problem On Ubuntu 22.04.5 LTS On The Raspberry Pi 4.md",
     "Ubuntu Server Network Service Swap From systemd-networkd To NetworkManager For Easier WiFi.md",
     "Welcome.md"
