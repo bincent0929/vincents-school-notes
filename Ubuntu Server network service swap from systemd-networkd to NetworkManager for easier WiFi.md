@@ -83,3 +83,14 @@ nmcli dev wifi list
 ```
 
 Now you'll see all the WiFi available in your area!
+
+With the SSID you pick from that list you'll want to type:
+```bash
+sudo nmcli dev wifi connect network-ssid
+```
+
+Replace `network-ssid` with the SSID of the network you want to connect to and it'll prompt you for a password for the network if it has one.
+
+Now you should be connected!
+
+Run `nmcli d` again to double check. It should say that you're connected.
