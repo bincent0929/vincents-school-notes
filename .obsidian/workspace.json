@@ -35,8 +35,7 @@
               "title": "How To Fix The Open vSwitch Problem"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -182,7 +181,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -196,10 +196,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f749d095d171ef1a",
+  "active": "b3ae75c8bbd7a7aa",
   "lastOpenFiles": [
-    "Ubuntu Server network service swap from systemd-networkd to NetworkManager for easier WiFi.md",
     "How To Fix The Open vSwitch Problem.md",
+    "Ubuntu Server network service swap from systemd-networkd to NetworkManager for easier WiFi.md",
     "Welcome.md"
   ]
 }
