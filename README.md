@@ -1,4 +1,4 @@
-These are some write ups I've done for school and other things I've done.
+## These are some write ups I've done for school and other things I've done.
 
 [Ubuntu Server Network Service Swap From systemd-networkd To NetworkManager For Easier WiFi](/vincents-school-notes/Ubuntu%20Server%20Network%20Service%20Swap%20From%20systemd-networkd%20To%20NetworkManager%20For%20Easier%20WiFi.md)
 
