@@ -183,8 +183,10 @@
   },
   "active": "12e7335f6f544c41",
   "lastOpenFiles": [
-    "How To Fix The Open vSwitch Problem On Ubuntu 22.04.5 LTS On The Raspberry Pi 4.md",
+    "vincents-school-notes/Ubuntu Server Network Service Swap From systemd-networkd To NetworkManager For Easier WiFi.md",
+    "vincents-school-notes",
     "README.md",
+    "How To Fix The Open vSwitch Problem On Ubuntu 22.04.5 LTS On The Raspberry Pi 4.md",
     "Ubuntu Server Network Service Swap From systemd-networkd To NetworkManager For Easier WiFi.md",
     "Ubuntu.md",
     "LICENSE",
