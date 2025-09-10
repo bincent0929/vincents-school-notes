@@ -4,7 +4,7 @@ You might've gone into `/etc/netplan/50-cloud-init.yaml`, updated it, and then d
 
 Here's how to fix it.
 
-All credit from here: https://web.archive.org/web/20250910171255/https://stackoverflow.com/questions/77352932/ovsdb-server-service-from-nowhere#77365896
+All credit from here: [https://web.archive.org/web/20250910171255/https://stackoverflow.com/questions/77352932/ovsdb-server-service-from-nowhere#77365896](https://web.archive.org/web/20250910171255/https://stackoverflow.com/questions/77352932/ovsdb-server-service-from-nowhere#77365896)
 
 Yes, you do need to download a package. You'll want to either trying plugging in ethernet, USB tether from your phone, or wiping your device to get to the point where you can install packages again if you can't download them.
 
