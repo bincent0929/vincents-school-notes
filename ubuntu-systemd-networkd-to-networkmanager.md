@@ -89,11 +89,27 @@ Now you'll see all the WiFi available in your area and connect to them!
 
 With the SSID you pick from that list you'll want to type:
 ```bash
-sudo nmcli dev wifi connect network-ssid
+sudo nmcli dev wifi connect network-ssid password actual-password
 ```
 
-Replace `network-ssid` with the SSID of the network you want to connect to and it'll prompt you for a password for the network if it has one.
+Replace `network-ssid` with the SSID of the network you want to connect to and then replace `actual-password` with the password for that network. If there is no password for the network you don't have to worry about any of the password stuff.
+
+If there's not password just type:
+```bash
+sudo nmcli dev wifi connect network-ssid
+```
 
 Now you should be connected!
 
 Run `nmcli d` again to double check. It should say that you're connected!
+## P.S.
+## If You Want To Connect To A New Network After Using NetworkManager To Connect To Another
+
+For some reason when you have already used NetworkManager to connect to a WiFi network it clears the WiFi access points that it has scanned for. So when you try to run a `sudo nmcli dev wifi connect` it acts like it doesn't know what you're talking about.
+
+To get around this you just need to have it rescan for access points again. You can do that by doing this command:
+```bash
+sudo nmcli device wifi rescan
+```
+
+Now you can go ahead and do `sudo nmcli dev wifi connect` if you already know the networks around you or you can do `nmcli dev wifi list` if you want to connect to one you don't already know off the top of your head.
