@@ -22,20 +22,21 @@
             }
           },
           {
-            "id": "9a87bb41653df4b4",
+            "id": "053224676b7584fb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raspberry-pi4-bootloader-update.md",
+                "file": "export-clarification-stuff.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "raspberry-pi4-bootloader-update"
+              "title": "export-clarification-stuff"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -196,11 +197,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "12e7335f6f544c41",
+  "active": "053224676b7584fb",
   "lastOpenFiles": [
-    "open-vswitch-problem-ubuntu-22.04.5LTS-rpi4.md",
+    "export-clarification-stuff.md",
     "ubuntu-systemd-networkd-to-networkmanager.md",
     "raspberry-pi4-bootloader-update.md",
+    "open-vswitch-problem-ubuntu-22.04.5LTS-rpi4.md",
     "README.md",
     "vincents-school-notes/Ubuntu Server Network Service Swap From systemd-networkd To NetworkManager For Easier WiFi.md",
     "vincents-school-notes",
