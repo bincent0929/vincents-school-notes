@@ -1,4 +1,4 @@
-# Ubuntu Server Network Service Swap From systemd-networkd To NetworkManager For Easier WiFi
+# Ubuntu Server Network Service Swap From `systemd-networkd` To NetworkManager For Easier WiFi
 
 You may be tired of going into that darn `/etc/netplan/50-cloud-init.yaml` file. If you are, then setting up `nmcli` will be worth your time. It'll find WiFi networks for you and you can use it to connect to them. All from the `cli`! No file editing needed!
 

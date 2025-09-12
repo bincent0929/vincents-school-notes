@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "robotics-and-machine-intelligence/ubuntu-systemd-networkd-to-networkmanager.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "ubuntu-systemd-networkd-to-networkmanager"
             }
           }
         ]
@@ -183,9 +183,9 @@
   },
   "active": "78d9c8d7598e6371",
   "lastOpenFiles": [
+    "README.md",
     "robotics-and-machine-intelligence/robotics-and-machine-intelligence-main-page.md",
     "robotics-and-machine-intelligence/Lab-1-Procedure-Updates-for-JETSON-host.pdf",
-    "README.md",
     "robotics-and-machine-intelligence/ubuntu-systemd-networkd-to-networkmanager.md",
     "robotics-and-machine-intelligence/export-clarification-stuff.md",
     "robotics-and-machine-intelligence/raspberry-pi4-bootloader-update.md",
