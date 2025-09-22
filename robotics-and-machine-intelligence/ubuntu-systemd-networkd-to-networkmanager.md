@@ -2,21 +2,30 @@
 
 You may be tired of going into that darn `/etc/netplan/50-cloud-init.yaml` file. If you are, then setting up `nmcli` will be worth your time. It'll find WiFi networks for you and you can use it to connect to them. All from the `cli`! No file editing needed!
 
-Firstly, you want to install the `network-manager` package for Ubuntu:
+Firstly, make sure all of your packages and repositories are up to date:
+```bash
+sudo apt update
+sudo apt upgrade
+sudo reboot
+```
+
+If you are disconnected from the internet because of a faulty configuration file and/or the [Open vSwitch service problem](./open-vswitch-problem-ubuntu-22.04.5LTS-rpi4), then you will need to connect your device to the internet through an interface that is working, or transfer the package from another device you have.
+
+Once you get your device updated and reboot you'll now want to install NetworkManager:
 ```bash
 sudo apt install network-manager
 ```
 
-Now we'll want to configure how the NetworkManager service will behave before we have it start up.
+But before we start using NetworkManager, we'll want to configure it a little bit.
 
-First, you will create `/etc/netplan/01-network-manager-all.yaml`. This will let the NetworkManager actually manage your computer's interfaces.
+First, make a copy of the `/etc/netplan/50-cloud-init.yaml` file (you could name it `/etc/netplan/50-cloud-init.yaml.copy`) and then delete it. If you don't, it can cause problems with NetworkManager handling your interfaces.
 
-To do that, type: 
+After you do that, go ahead and create `/etc/netplan/01-network-manager-all.yaml`. This will let the NetworkManager actually manage your computer's interfaces:
 ```bash
 sudo nano /etc/netplan/01-network-manager-all.yaml
 ```
 
-Then put this in it:
+In the file, input this:
 ```
 # lets NetworkManager...manage all the interfaces
 network:
@@ -24,12 +33,14 @@ network:
   renderer: NetworkManager
 ```
 
-After, go into the NetworkManager config: 
+This basically tells your operating system to use NetworkManager to manage all of its interfaces.
+
+Now that we're configured out operating system, we'll go ahead and configure network manager itself through editing its config file:
 ```bash
 sudo nano /etc/NetworkManager/NetworkManager.conf
 ```
 
-Then, put this in:
+In the file you'll want it to look like this:
 ```
 [main]
 plugins=ifupdown,keyfile
@@ -42,9 +53,18 @@ managed=false
 wifi.scan-rand-mac-address=no
 ```
 
-By having `dns=systemd-resolved`, we still use the standard system service for DNS queries, avoiding any possible conflicts.
+By adding `dns=systemd-resolved`, it allows use to avoid complicating the install with swapping around DNS resolvers.
 
-Now you want to disable and then stop the `systemd-networkd` service:
+Ok, so now your system should be ready for you to start to swap your services.
+
+First you'll want to do this:
+```bash
+systemctl mask systemd-networkd-wait-online.service
+```
+
+This will stop your device from waiting for you network to be connected before starting up. It also stops `systemd-networkd` from getting started by it.
+
+Now you'll want to disable and then stop the `systemd-networkd` service:
 ```bash
 sudo systemctl disable systemd-networkd
 sudo systemctl stop systemd-networkd
@@ -55,7 +75,7 @@ Then enable the NetworkManager service and restart your device:
 sudo systemctl enable NetworkManager
 ```
 
-Once your device turns back on, you can use `nmcli d` to list devices. It'll look a little like this:
+Once your device turns back on, run `nmcli d` to list your interfaces. It'll look like this:
 ```bash
 user@device:~$ nmcli d
 DEVICE         TYPE      STATE                   CONNECTION
@@ -66,50 +86,8 @@ p2p-dev-wlan0  wifi-p2p  disconnected            --
 lo             loopback  unmanaged               --
 ```
 
-And if you want to connect to WiFi, instead of going to `/etc/netplan/50-cloud-init.yaml` and dealing with this mess:
+If when you run `nmcli d` it shows that most of your interfaces are unmanaged, then there's a problem. Something is causing NetworkManager to not manage your interfaces. To be honest, that may mean there's a problem with the guide. Please create an issue in the repo and let me know if it's not working.
 
-```
-network:
-    version: 2
-    wifis:
-       wlan0:
-          optional: true
-          access-points:
-                 "wifi-name":
-                      password: "password"
-          dhcp4: true
-```
+Now NetworkManager is working!
 
-You can go ahead and type:
-```bash
-nmcli dev wifi list
-```
-
-Now you'll see all the WiFi available in your area and connect to them!
-
-With the SSID you pick from that list you'll want to type:
-```bash
-sudo nmcli dev wifi connect network-ssid password actual-password
-```
-
-Replace `network-ssid` with the SSID of the network you want to connect to and then replace `actual-password` with the password for that network. If there is no password for the network you don't have to worry about any of the password stuff.
-
-If there's not password just type:
-```bash
-sudo nmcli dev wifi connect network-ssid
-```
-
-Now you should be connected!
-
-Run `nmcli d` again to double check. It should say that you're connected!
-## P.S.
-## If You Want To Connect To A New Network After Using NetworkManager To Connect To Another
-
-For some reason when you have already used NetworkManager to connect to a WiFi network it clears the WiFi access points that it has scanned for. So when you try to run a `sudo nmcli dev wifi connect` it acts like it doesn't know what you're talking about.
-
-To get around this you just need to have it rescan for access points again. You can do that by doing this command:
-```bash
-sudo nmcli device wifi rescan
-```
-
-Now you can go ahead and do `sudo nmcli dev wifi connect` if you already know the networks around you or you can do `nmcli dev wifi list` if you want to connect to one you don't already know off the top of your head.
+Head over [here](./using-network-manager-in-the-cli) if you want to get an idea of how to use NetworkManager.

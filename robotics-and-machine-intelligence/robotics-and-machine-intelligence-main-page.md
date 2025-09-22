@@ -3,6 +3,8 @@
 
 [Ubuntu Server Network Service Swap From systemd-networkd To NetworkManager For Easier WiFi](./ubuntu-systemd-networkd-to-networkmanager)
 
+[How To Use NetworkManager In The Cli](./using-network-manager-in-the-cli)
+
 [How To Fix The Open vSwitch Problem On Ubuntu 22.04.5 LTS On The Raspberry Pi 4](./open-vswitch-problem-ubuntu-22.04.5LTS-rpi4)
 
 [How To Update The Raspberry Pi 4's Bootloader](./raspberry-pi4-bootloader-update)
